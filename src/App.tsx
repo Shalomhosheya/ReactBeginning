@@ -1,14 +1,11 @@
 import './App.css'
-import Dashboard from "./components/Dashbord.tsx";
-import LoginComponent from "./components/LoginComponent.tsx";
+import ChildButton from "./components/Button.tsx";
 
 function App() {
 
-    const login : boolean = false;
-
   return (
     <>
-        {login ?<Dashboard/>:<LoginComponent/>}
+        <ChildButton>Submit</ChildButton>
     </>
   )
 }
