@@ -1,14 +1,14 @@
 import './App.css'
-import {Subject} from "./components/Subject.tsx";
-
 function App() {
 
+    function handleClick(type:string){
+        console.log(type)
+        alert(type)
+    }
   return (
-    <>
-        <Subject name={"RAD"}>lorem ipsum</Subject>
-        <Subject name={"MAD"}>lorem ipsum</Subject>
-        <Subject name={"RAD"}>lorem ipsum</Subject>
-    </>
+    <div>
+        <button onClick={()=>{handleClick("handleClick")}}>Click</button>
+    </div>
   )
 }
 
