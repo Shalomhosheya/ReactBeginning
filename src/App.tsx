@@ -1,11 +1,13 @@
 import './App.css'
-import ChildButton from "./components/Button.tsx";
+import {Subject} from "./components/Subject.tsx";
 
 function App() {
 
   return (
     <>
-        <ChildButton>Submit</ChildButton>
+        <Subject name={"RAD"}>lorem ipsum</Subject>
+        <Subject name={"MAD"}>lorem ipsum</Subject>
+        <Subject name={"RAD"}>lorem ipsum</Subject>
     </>
   )
 }
