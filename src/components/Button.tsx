@@ -1,6 +1,6 @@
 export default function ChildButton(props) {
-    const name = props.name
+    const count = props.count
     return(
-        <button onClick={() => props.onClick(name)}>{props.name}</button>
+        <button onClick={() => props.onClick(count)}>{props.name}</button>
     )
 }

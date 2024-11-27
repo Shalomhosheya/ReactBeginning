@@ -4,21 +4,16 @@ import {useState} from "react";
 
 function App() {
 
-    // let content :string = 'Dashboard';
-    const[content, setContent] = useState('');
-    function handleClick(type:string){
-        console.log(type)
-        alert(type)
-        // content=type
-        setContent(type)
+
+    const[count, setContent] = useState(0);
+    function increeseCount(type){
+        setContent(count+1)
     }
   return (
     <div>
-        <ChildButton name={'Dashboard'} onClick={handleClick}/>
-        <ChildButton name={'Add Customer'} onClick={handleClick}/>
-        <ChildButton name={'Delete Customer'} onClick={handleClick}/>
+        <ChildButton name ={"Click : "+count} count={count} onClick={increeseCount}/>
         <br/>
-        {content}
+        {/*{count}*/}
     </div>
   )
 }
