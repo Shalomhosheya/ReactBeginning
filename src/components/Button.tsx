@@ -1,5 +1,6 @@
-export default function ChildButton(props:{children:React.ReactNode}) {
+export default function ChildButton(props) {
+    const name = props.name
     return(
-        <button onClick={()=> alert("Button")}>{props.children}</button>
+        <button className="button" onClick={() => props.onClick(name)}>{props.name}</button>
     )
 }

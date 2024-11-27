@@ -1,4 +1,5 @@
 import './App.css'
+import ChildButton from "./components/Button.tsx";
 function App() {
 
     function handleClick(type:string){
@@ -7,7 +8,9 @@ function App() {
     }
   return (
     <div>
-        <button onClick={()=>{handleClick("handleClick")}}>Click</button>
+        <ChildButton name={'Dashboard'} onClick={handleClick}/>
+        <ChildButton name={'Add Customer'} onClick={handleClick}/>
+        <ChildButton name={'Delete Customer'} onClick={handleClick}/>
     </div>
   )
 }
