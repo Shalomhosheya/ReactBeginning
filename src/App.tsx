@@ -4,9 +4,17 @@ import {Customer} from "./components/items.tsx";
 
 function App() {
 
+    const itemArray=[];
+
+    for(const item of itemList){
+        itemArray.push(
+            <Customer title={item.title} desc={item.desc}></Customer>
+        );
+    }
+
   return (
     <>
-        {/*<Customer title={"RAD"} desc={"dada adad dada dadad dasa adadda"}></Customer>*/}
+        <Customer title={"RAD"} desc={"dada adad dada dadad dasa adadda"}></Customer>
         <Item title={"RAD"} desc={"text text text text text"}></Item>
         <Item title={"RAD"} desc={"text text text text text"}></Item>
         <Item title={"RAD"} desc={"text text text text text"}></Item>
@@ -18,9 +26,14 @@ function App() {
         <Item {...itemList[0]}></Item>
         <Item {...itemList[1]}></Item>
         <Item {...itemList[2]}></Item>
+
+        {itemArray}
     </>
   )
 }
+
+
+// sore in array
 
 const itemList = [
     {
