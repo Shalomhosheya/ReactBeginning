@@ -1,19 +1,33 @@
 import './App.css'
-import ChildButton from "./components/Button.tsx";
-import {useState} from "react";
+import {ChangeEvent, useState} from "react";
 
 function App() {
 
 
-    const[count, setContent] = useState(0);
-    // function increeseCount(type){
-    //     setContent(count+1)
-    // }
+    // const  [customer ,setCustomer]
+    const [customer, setCustomer] = useState({
+        firstName : 0,
+        lastName : 0
+    });
+
+
+    function handleInputChange(event:ChangeEvent<HTMLInputElement>) {
+        setCustomer({
+            ...customer,
+        [event.target.name]: event.target.value
+
+        })
+    }
+
   return (
     <div>
-        {/*<ChildButton name ={"Click : "+count} count={count} onClick={count+1}/>*/}
-        {/*<button name ={"Click : "+count} onClick={setContent(count+1)}/></button>*/}
-      <button onClick={()=>{setContent((count+1))}} >Click : {count}</button>
+        <input name={"firstName"} type="text" placeholder={"First Name"} onChange={handleInputChange}/>
+        <input name={"lastName"} type="text" placeholder={"Last Name"} onChange={handleInputChange}/>
+
+        <br/>
+        <h2>{"Hello "+customer.firstName +" "+customer.lastName}</h2>
+
+
     </div>
   )
 }
