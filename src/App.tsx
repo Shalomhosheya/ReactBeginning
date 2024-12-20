@@ -1,36 +1,28 @@
-import './App.css'
-import {ChangeEvent, useState} from "react";
-
-function App() {
-
-
-    // const  [customer ,setCustomer]
-    const [customer, setCustomer] = useState({
-        firstName : 0,
-        lastName : 0
-    });
-
-
-    function handleInputChange(event:ChangeEvent<HTMLInputElement>) {
-        setCustomer({
-            ...customer,
-        [event.target.name]: event.target.value
-
-        })
+import './App.css';
+import {useReducer} from "react";
+const initialState = 0;
+function countReducer(state = initialState, action:{type:string,payload:number}) {
+    switch (action.type){
+        case "ADD_Counter":
+            return state += action.payload;
+            case "REMOVE_Counter":
+                return state -= action.payload;
+                default:
+                    return state
     }
-
-  return (
-    <div>
-        <input name={"firstName"} type="text" placeholder={"First Name"} onChange={handleInputChange}/>
-        <input name={"lastName"} type="text" placeholder={"Last Name"} onChange={handleInputChange}/>
-
-        <br/>
-        <h2>{"Hello "+customer.firstName +" "+customer.lastName}</h2>
-
-
-    </div>
-  )
 }
 
+function App(){
+const [count,dispatch]= useReducer(countReducer,initialState);
+    return (
+    <>
+        <h2>{count}</h2>
+        <button className="btn" onClick={() =>dispatch({type:"ADD_Counter",payload :1})}> Increment </button>
 
-export default App
+        <button className="btn" onClick={() =>dispatch({type:"REMOVE_Counter",payload :1})}> Decrement</button>
+    </>
+    )
+}
+
+export default App;
+

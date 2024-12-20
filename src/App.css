@@ -11,6 +11,24 @@
   will-change: filter;
   transition: filter 300ms;
 }
+#customer{
+  position: relative;
+  right: 10px;
+}
+#updateCustomer{
+  position: relative;
+  left: 10px;
+}
+#resetText{
+  position: relative;
+  left: 20px;
+}
+.inputs{
+  position: relative;
+  margin-left: 2rem;
+  height: 40px;
+  width: 20rem;
+}
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
@@ -35,6 +53,10 @@
 
 .card {
   padding: 2em;
+}
+.btn{
+  padding: 1em;
+  margin: 1em;
 }
 
 .read-the-docs {
