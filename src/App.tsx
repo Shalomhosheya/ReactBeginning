@@ -1,18 +1,30 @@
 import './App.css';
-import {useReducer} from "react";
-import {countReducer, initialState} from "./reducers/CountReducers.tsx";
+import {useReducer, useState} from "react";
+import {countReducer2, initialState2} from "./reducers/CountReducers.tsx";
 
 function App(){
-const [count,dispatch]= useReducer(countReducer,initialState);
+   const[name,dispatch] = useReducer(countReducer2,initialState2)
+    const[firstname, setFirstname] = useState('');
+    const[lastname, setLastName] = useState('');
     return (
-    <>
-        <h2>{count}</h2>
-        <button className="btn" onClick={() =>dispatch({type:"ADD_Counter",payload :1})}> Increment </button>
+        <>
+            <input type="text" placeholder="First Name" onChange={(e) => {
+                setFirstname(e.target.value)
+            }}/>
+            <input placeholder="Last Name" onChange={(e) => {
+                setLastName(e.target.value)
+            }}/>
 
-        <button className="btn" onClick={() =>dispatch({type:"REMOVE_Counter",payload :1})}> Decrement</button>
-    </>
+            <button onClick={()=>dispatch({type:"print",payload:{firstname,lastname}})}>Submit</button>
+
+            <h3>{name.firstname} {name.lastname}</h3>
+
+        </>
+
     )
 }
 
 export default App;
+
+
 
